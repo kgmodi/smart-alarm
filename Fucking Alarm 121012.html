@@ -1,0 +1,100 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery Mobile Web App</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link href="jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
+
+<link href="jquery-mobile/smartAlarm3.min.css" rel="stylesheet" type="text/css"/>
+<link href="jquery-mobile/smartAlarm3.css" rel="stylesheet" type="text/css"/>
+
+<style>
+
+/*specify a height for the header so we can line-up the elements, the default is 40px*/
+.ui-header {
+    height : 40px;
+}
+
+
+/*absolutely position the footer to the bottom of the page*/
+.ui-footer {
+    position : absolute;
+    bottom   : 0;
+    left     : 0;
+    width    : 100%;
+    height   : 40px;
+}​
+
+h4 {
+	vertical-align="middle";
+}
+
+</style>
+
+
+<script src="jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery.mobile-1.0.min.js" type="text/javascript"></script>
+
+
+</head> 
+<body> 
+<!--start of first page-->
+<div id="home" data-role="page" data-theme="a">
+	<div data-role="header" data-position="fixed">
+		<a href="#new" data-icon="add" data-iconpos="notext" data-transition="flip">Add</a>
+		<h1></h1>
+		<a href="#edit" data-icon="info" data-iconpos="notext" data-transition="flip">Edit</a>
+	</div> <!--header-->
+    
+    <div id="content" data-role="content" data-theme="a">
+		<h4 align="center">Three - Fifty - Four</h4>
+        <h4 align="center">in the morning</h4>
+	</div> <!--content-->
+   	
+    <div data-role="footer" data-position="fixed"> 
+		<h1></h1> 
+	</div> <!--footer-->    
+</div> <!--page-->
+
+<!--start of edit page page-->
+<div data-role="page" id="edit" data-theme="b">
+	<div data-role="header" data-position="fixed">
+		<a href="#home" data-icon="back" data-iconpos="notext" data-transition="flip">Add</a>
+		<a href="#home" data-icon="check" data-iconpos="notext" data-transition="flip">Edit</a>
+	</div> <!--header-->
+
+    <div data-role="content" id="content" data-theme="b"> 
+		<h1>EDIT ALARM</h1>
+		
+	</div> <!--content-->
+   	
+    <div data-role="footer" data-position="fixed"> 
+		<h1></h1> 
+	</div> <!--footer-->  
+</div> <!--page-->
+
+<!--start of new alarm page page-->
+<div data-role="page" id="new" data-theme="b">
+	<div data-role="header" data-position="fixed">
+		<a href="#home" data-icon="back" data-iconpos="notext" data-transition="flip">Add</a>
+		<h1>NEW ALARM</h1>
+		<a href="#home" data-icon="check" data-iconpos="notext" data-transition="flip">Edit</a>
+	</div> <!--header-->
+    
+    <div data-role="content" id="content" data-theme="b"> 
+		<h4>some content</h4>
+        <p> content </p> 
+	</div> <!--content-->
+   	
+    <div data-role="footer" data-position="fixed"> 
+		<h1>FOOTER CONTENT</h1> 
+	</div> <!--footer-->  
+</div> <!--page-->
+
+</body>
+</html>
