@@ -1,0 +1,185 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Social Alarm</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="jquery-mobile/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
+	<link href="jquery-mobile/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
+	<link href="jquery-mobile/smartAlarm3.min.css" rel="stylesheet" type="text/css"/>
+	<link href="jquery-mobile/smartAlarm3.css" rel="stylesheet" type="text/css"/>
+
+	<script type="text/javascript" src="jquery-1.2.6.min.js"></script>
+	<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+	<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+
+	<style>
+
+	/*specify a height for the header so we can line-up the elements, the default is 40px*/
+	  .ui-header {
+      height : 40px;
+    }      
+
+
+	/*absolutely position the footer to the bottom of the page*/
+    .ui-footer {
+      position : absolute;
+      bottom   : 0;
+      left     : 0;
+      width    : 100%;
+      height   : 40px;
+    }​
+
+    .blah{}
+
+    #clock {
+    position: relative;
+    width: 640px;
+    height: 960px;
+    margin: 20px auto 0 auto;
+    background: url(https://raw.github.com/kgmodi/smart-alarm/master/CSS3Clock/images/clockface4.png);
+    background-repeat: no-repeat;
+    list-style: none;
+    z-index: 1;
+    }
+        
+    #sec, #min, #hour {
+    position: absolute;
+    width: 70px;
+    height: 960px;
+    background-repeat: no-repeat;
+    top: 0px;
+    left: 285px;
+    }
+        
+    /* #sec {
+    background: url(https://raw.github.com/kgmodi/smart-alarm/master/CSS3Clock/images/sechand2.png);
+    z-index: 4;
+    } */
+           
+    #min {
+    background: url(https://raw.github.com/kgmodi/smart-alarm/master/CSS3Clock/images/minhand3.png);
+    background-repeat: no-repeat;
+    z-index: 2;
+    }
+           
+    #hour {
+    background: url(https://raw.github.com/kgmodi/smart-alarm/master/CSS3Clock/images/hourhand2.png);
+    z-index: 3;
+    }
+
+	</style>
+
+    <script type="text/javascript">
+    
+        $(document).ready(function() {
+         
+              setInterval( function() {
+              var seconds = new Date().getSeconds();
+              var sdegree = seconds * 6;
+              var srotate = "rotate(" + sdegree + "deg)";
+              
+              $("#sec").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
+                  
+              }, 1000 );
+              
+         
+              setInterval( function() {
+              var hours = new Date().getHours();
+              var mins = new Date().getMinutes();
+              var hdegree = hours * 30 + (mins / 2);
+              var hrotate = "rotate(" + hdegree + "deg)";
+              
+              $("#hour").css({"-moz-transform" : hrotate, "-webkit-transform" : hrotate});
+                  
+              }, 1000 );
+        
+        
+              setInterval( function() {
+              var mins = new Date().getMinutes();
+              var mdegree = mins * 6;
+              var mrotate = "rotate(" + mdegree + "deg)";
+              
+              $("#min").css({"-moz-transform" : mrotate, "-webkit-transform" : mrotate});
+                  
+              }, 1000 );
+         
+        }); 
+    
+    </script>
+
+
+</head> 
+<body> 
+<!--start of first page-->
+<div id="home" data-role="page" data-theme="a">
+	<div data-role="header" data-position="fixed">
+		<a href="#new" data-icon="add" data-iconpos="notext" data-transition="flip">Add</a>
+		<h1></h1>
+		<a href="#edit" data-icon="info" data-iconpos="notext" data-transition="flip">Edit</a>
+	</div> <!--header-->
+    
+    <div id="content" data-role="content" data-theme="a">
+		<ul id="clock">	
+	   		<li id="sec"></li>
+	   		<li id="hour"></li>
+        <li id="min"></li>
+		</ul>
+	</div> <!--content-->
+   	
+    <div data-role="footer" data-position="fixed"> 
+		<h1></h1> 
+	</div> <!--footer-->    
+</div> <!--page-->
+
+<!--start of edit page page-->
+<div data-role="page" id="edit" data-theme="a">
+	<div data-role="header" data-position="fixed">
+		<a href="#home" data-icon="back" data-iconpos="notext" data-transition="flip">Add</a>
+		<a href="#home" data-icon="check" data-iconpos="notext" data-transition="flip">Edit</a>
+	</div> <!--header-->
+
+    <div data-role="content" id="content" data-theme="a"> 
+		<h1>EDIT ALARM</h1>
+
+		<label for="basic">Alarm ID:</label>
+    	<input type="text" data-theme="b" name="alarmID" id="basic" value=""  />
+
+    	<label for="basic">Alarm Name:</label>
+    	<input type="text" data-theme="b" name="alarmName" id="basic" value=""  />
+
+    	<label for="basic">Text Input:</label>
+    	<input type="text" data-theme="b" name="name" id="basic" value=""  />
+		
+    	<label for="basic">Time:</label>
+    	<input type="time" data-theme="b" name="name" id="basic" value=""  />
+
+	</div> <!--content-->
+   	
+    <div data-role="footer" data-position="fixed"> 
+		<h1></h1> 
+	</div> <!--footer-->  
+</div> <!--page-->
+
+<!--start of new alarm page page-->
+<div data-role="page" id="new" data-theme="a">
+	<div data-role="header" data-position="fixed">
+		<a href="#home" data-icon="back" data-iconpos="notext" data-transition="flip">Add</a>
+		<h1>NEW ALARM</h1>
+		<a href="#home" data-icon="check" data-iconpos="notext" data-transition="flip">Edit</a>
+	</div> <!--header-->
+    
+    <div data-role="content" id="content" data-theme="a"> 
+		<h4>some content</h4>
+        <p> content </p> 
+	</div> <!--content-->
+   	
+    <div data-role="footer" data-position="fixed"> 
+		<h1>FOOTER CONTENT</h1> 
+	</div> <!--footer-->  
+</div> <!--page-->
+
+</body>
+</html>
