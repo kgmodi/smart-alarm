@@ -71,17 +71,19 @@ h4 {
     <div data-role="content" id="content" data-theme="a"> 
 		<h1>EDIT ALARM</h1>
 
-		<label for="basic">Alarm ID:</label>
-    	<input type="text" data-theme="b" name="alarmID" id="basic" value=""  />
+		<form action="" method="post">
+			<label for="basic">Alarm ID:</label>
+	    	<input type="text" data-theme="b" name="alarmID" id="basic" value=""  />
 
-    	<label for="basic">Alarm Name:</label>
-    	<input type="text" data-theme="b" name="alarmName" id="basic" value=""  />
+	    	<label for="basic">Alarm Name:</label>
+	    	<input type="text" data-theme="b" name="alarmName" id="basic" value=""  />
 
-    	<label for="basic">Friend's Username:</label>
-    	<input type="text" data-theme="b" name="name" id="basic" value=""  />
-		
-    	<label for="basic">Alarm:</label>
-    	<input type="time" data-theme="b" name="name" id="basic" value=""  />
+	    	<label for="basic">Friend's Username:</label>
+	    	<input type="text" data-theme="b" name="name" id="basic" value=""  />
+			
+	    	<label for="basic">Alarm:</label>
+	    	<input type="time" data-theme="b" name="name" id="basic" value=""  />
+    	</form>
 
 	</div> <!--content-->
    	
@@ -101,7 +103,7 @@ h4 {
     
     <div data-role="content" id="content" data-theme="a">
 
-    	<form action="http://192.168.110.182/users/7329836129/alarms" method="post"> 
+    	<form action="http://192.168.110.182:8080/webresources/users/7329836129/alarms" method="post"> 
     		<label for="basic">Alarm Name:</label>
 	    	<input type="text" data-theme="b" name="alarmName" id="basic" value=""  />
 
