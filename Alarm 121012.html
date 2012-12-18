@@ -13,6 +13,10 @@
 <link href="jquery-mobile/smartAlarm3.min.css" rel="stylesheet" type="text/css"/>
 <link href="jquery-mobile/smartAlarm3.css" rel="stylesheet" type="text/css"/>
 
+
+<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+
 <style>
 
 /*specify a height for the header so we can line-up the elements, the default is 40px*/
@@ -36,13 +40,11 @@ h4 {
 
 </style>
 
-
-<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
-<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
-
-
 </head> 
 <body> 
+
+	<div id="result"></div>
+  
 <!--start of first page-->
 <div id="home" data-role="page" data-theme="a">
 	<div data-role="header" data-position="fixed">
@@ -103,25 +105,60 @@ h4 {
     
     <div data-role="content" id="content" data-theme="a">
 
-    	<form action="http://192.168.110.182:8080/webresources/users/7329836129/alarms" method="post"> 
-    		<label for="basic">Alarm Name:</label>
-	    	<input type="text" data-theme="b" name="alarmName" id="basic" value=""  />
+		<form id="createAlarm" method="post" action="/"> 
+			<label for="basic">Alarm Name:</label>
+	    	<input type="text" data-theme="b" name="alarmname" id="basic1" value=""  />
 
 	    	<label for="basic">Friend's Phone #:</label>
-	    	<input type="text" data-theme="b" name="name" id="basic" value=""  />
-			
+	    	<input type="text" data-theme="b" name="fuid" id="basic2" value=""  />
+
 	    	<label for="basic">Alarm Time:</label>
-	    	<input type="time" data-theme="b" name="name" id="basic" value=""  />
+	    	<input type="time" data-theme="b" name="alarmtime" id="basic3" value=""  />
 	    	<br>
 	    	<input type="submit" value="Create New Alarm">
-    	</form>
-
+		</form>
 	</div> <!--content-->
+	
+
    	
     <div data-role="footer" data-position="fixed"> 
 		<h1>FOOTER CONTENT</h1> 
 	</div> <!--footer-->  
 </div> <!--page-->
+
+<script>
+$("#createAlarm").submit(function() {
+	console.log("here");
+	var $form = $( this ),
+    alarmname = $form.find( 'input[name="alarmname"]' ).val(),
+    fuid = $form.find( 'input[name="fuid"]' ).val(),
+    alarmtime = $form.find( 'input[name="alarmtime"]' ).val(),
+    url = $form.attr( 'action' );
+	var send = {
+		"alarmName" : alarmname,
+		"alarmTime" : alarmtime,
+		"fuid" : fuid
+	}
+	$.ajax({
+		url: 'http://localhost:8080/rest/users/7329836129/alarms',
+		async: false,
+		type: "POST",
+		data: JSON.stringify(send),
+		contentType: "application/json;charset=utf-8",
+		dataType: 'json',
+		error: function(xhr, error) {
+			alert('Error!  Status = ' + xhr.status + ' Message = ' + error);
+		},
+		success: function(data) {
+			//have you service return the created object
+			var items = [];
+
+			$('#result').html(items.join(''));
+		}
+	});
+	return false;
+});	
+</script>
 
 </body>
 </html>
