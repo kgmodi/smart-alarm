@@ -83,6 +83,9 @@
 	color: #ffffff /*{a-body-color}*/;
 }
 
+.ui-body-a textarea {
+	color: #000000;
+}
 .ui-body-a .ui-link {
 	color: #ffffff /*{a-body-link-color}*/;
 	font-weight: bold;
@@ -208,7 +211,7 @@
 .ui-body-b,
 .ui-overlay-b {
 	border: 1px solid #ffffff /*{b-body-border}*/;
-	color: #ffffff /*{b-body-color}*/;
+	color: #000000 /*{b-body-color}*/;
 	text-shadow: 0 /*{b-body-shadow-x}*/ 0px /*{b-body-shadow-y}*/ 0 /*{b-body-shadow-radius}*/ #ffffff /*{b-body-shadow-color}*/;
 	background: #ffffff /*{b-body-background-color}*/;
 	background-image: -webkit-gradient(linear, left top, left bottom, from( #ffffff /*{b-body-background-start}*/), to( #ffffff /*{b-body-background-end}*/)); /* Saf4 , Chrome */
@@ -735,7 +738,8 @@ a.ui-link-inherit {
 .ui-input-search.ui-focus {
 	-moz-box-shadow: 0px 0px 12px #5fdefa /*{global-active-background-color}*/;
 	-webkit-box-shadow: 0px 0px 12px #5fdefa /*{global-active-background-color}*/;
-	box-shadow: 0px 0px 12px #5fdefa /*{global-active-background-color}*/;	
+	box-shadow: 0px 0px 12px #5fdefa /*{global-active-background-color}*/;
+	color: black;	
 }
 
 /* unset box shadow in browsers that don't do it right
