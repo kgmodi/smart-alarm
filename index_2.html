@@ -41,8 +41,7 @@
     position: relative;
     width: 320px;
     height: 480px;
-    margin: 0 auto;
-    text-align: center;
+    margin: 20px auto 0 auto;
     background: url(CSS3Clock/images/clockface6.png);
     background-repeat: no-repeat;
     list-style: none;
@@ -79,7 +78,15 @@
     <script type="text/javascript">
     
         $(document).ready(function() {
-
+         
+              setInterval( function() {
+              var seconds = new Date().getSeconds();
+              var sdegree = seconds * 6;
+              var srotate = "rotate(" + sdegree + "deg)";
+              
+              $("#sec").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
+                  
+              }, 1000 );
               
          
               setInterval( function() {
@@ -184,6 +191,7 @@
 	</div> <!--content-->
    	
     <div data-role="footer" data-position="fixed"> 
+		<h1>FOOTER CONTENT</h1> 
 	</div> <!--footer-->  
 </div> <!--page-->
 
