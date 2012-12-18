@@ -17,6 +17,9 @@
 
 	<style>
 
+    h3 {
+      text-align: center;
+    }
 	/*specify a height for the header so we can line-up the elements, the default is 40px*/
 	  .ui-header {
       height : 40px;
@@ -38,8 +41,8 @@
     position: relative;
     width: 320px;
     height: 480px;
-    margin: 10px auto 0 auto;
-    background: url(CSS3Clock/images/clockface4@2x.png);
+    margin: 20px auto 0 auto;
+    background: url(CSS3Clock/images/clockface6.png);
     background-repeat: no-repeat;
     list-style: none;
     z-index: 1;
@@ -47,11 +50,11 @@
         
     #sec, #min, #hour {
     position: absolute;
-    width: 70px;
-    height: 960px;
+    width: 32px;
+    height: 480px;
     background-repeat: no-repeat;
     top: 0px;
-    left: 285px;
+    left: 160px;
     }
         
     /* #sec {
@@ -59,16 +62,16 @@
     z-index: 4;
     } */
            
-    #min {
-    background: url(https://raw.github.com/kgmodi/smart-alarm/master/CSS3Clock/images/minhand3.png);
+    /*#min {
+    background: url(https://raw.github.com/kgmodi/smart-alarm/master/CSS3Clock/images/minhand3GS.png);
     background-repeat: no-repeat;
     z-index: 2;
     }
            
     #hour {
-    background: url(https://raw.github.com/kgmodi/smart-alarm/master/CSS3Clock/images/hourhand2.png);
+    background: url(https://raw.github.com/kgmodi/smart-alarm/master/CSS3Clock/images/hourhand3GS.png);
     z-index: 3;
-    }
+    } */
 
 	</style>
 
@@ -138,23 +141,23 @@
 <div data-role="page" id="edit" data-theme="a">
 	<div data-role="header" data-position="fixed">
 		<a href="#home" data-icon="back" data-iconpos="notext" data-transition="flip">Add</a>
+    <h1>EDIT ALARM</h1>
 		<a href="#home" data-icon="check" data-iconpos="notext" data-transition="flip">Edit</a>
 	</div> <!--header-->
 
     <div data-role="content" id="content" data-theme="a"> 
-		<h1>EDIT ALARM</h1>
-
-		<label for="basic">Alarm ID:</label>
-    	<input type="text" data-theme="b" name="alarmID" id="basic" value=""  />
+		<h3>Edit Details</h3>
 
     	<label for="basic">Alarm Name:</label>
     	<input type="text" data-theme="b" name="alarmName" id="basic" value=""  />
 
-    	<label for="basic">Text Input:</label>
+    	<label for="basic">Friend's Phone #:</label>
     	<input type="text" data-theme="b" name="name" id="basic" value=""  />
 		
-    	<label for="basic">Time:</label>
+    	<label for="basic">Alarm Time:</label>
     	<input type="time" data-theme="b" name="name" id="basic" value=""  />
+      <br>
+      <input type="submit" data-theme="b" name="name" id="basic" value="Update Alarm"  />
 
 	</div> <!--content-->
    	
@@ -172,8 +175,19 @@
 	</div> <!--header-->
     
     <div data-role="content" id="content" data-theme="a"> 
-		<h4>some content</h4>
-        <p> content </p> 
+		<h3>Alarm Details</h3>
+
+      <label for="basic">Alarm Name:</label>
+      <input type="text" data-theme="b" name="alarmName" id="basic" value=""  />
+
+      <label for="basic">Friend's Phone #:</label>
+      <input type="text" data-theme="b" name="name" id="basic" value=""  />
+    
+      <label for="basic">Alarm Time:</label>
+      <input type="time" data-theme="b" name="name" id="basic" value=""  />
+      <br>
+      <input type="submit" data-theme="b" name="name" id="basic" value="Send Request"  />
+
 	</div> <!--content-->
    	
     <div data-role="footer" data-position="fixed"> 
