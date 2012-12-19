@@ -76,9 +76,23 @@
 
 	</style>
 
-    <script type="text/javascript">
-    
-        $(document).ready(function() {
+<script>
+<!--
+$('div.ui-page').live("swipeleft", function(){
+var nextpage = $(this).next('div[data-role="page"]');
+if (nextpage.length > 0) {
+$.mobile.changePage(nextpage, "slide", false, true);
+}
+});
+$('div.ui-page').live("swiperight", function(){
+var prevpage = $(this).prev('div[data-role="page"]');
+if (prevpage.length > 0) {
+$.mobile.changePage(prevpage, {transition: "slide",
+reverse: true}, true, true);
+}
+});
+// -->
+</script>
 
               
          
@@ -117,6 +131,7 @@
 		<a href="#edit" data-icon="info" data-iconpos="notext" data-transition="flip">Edit</a>
 	</div> <!--header-->
     
+    <h3>My Alarm</h3>
     <div id="content" data-role="content" data-theme="a">
 		<ul id="clock">	
 	   		<li id="sec"></li>
@@ -127,7 +142,8 @@
    	
     <div data-role="footer" data-position="fixed"> 
 		<h1></h1> 
-	</div> <!--footer-->    
+	</div> <!--footer-->
+
 </div> <!--page-->
 
 <!--start of edit page page-->
