@@ -154,7 +154,7 @@ public class MongoDataAccessObject {
         if(alarms != null){
             List<Alarm> alarm = alarms.getAlarms();
             for (Alarm alarm2 : alarm) {
-                if(alarm2.getId().equals(aid)){
+                if(alarm2.getId() != null && alarm2.getId().equals(aid)){
                     return alarm2;
                 }
             }

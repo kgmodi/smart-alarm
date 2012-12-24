@@ -73,7 +73,7 @@ public class MongoUser {
             alarm.setAlarmName((String)dbObject.get("alarmName"));
             alarm.setAlarmTime((String)dbObject.get("alarmTime"));
             alarm.setFuid((String)dbObject.get("fuid"));
-            alarm.setId((String)dbObject.get("_id"));
+            alarm.setId((String)dbObject.get("id"));
             alarm.setUserId((String)dbObject.get("userId"));
             return alarm;
         }

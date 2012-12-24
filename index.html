@@ -85,8 +85,8 @@
 	</style>
 
     <script type="text/javascript">
-    // var HOST = "http://kunalmodi.com:8080";
-	var HOST = "http://localhost:8080";
+    var HOST = "http://kunalmodi.com:8080";
+	// var HOST = "http://localhost:8080";
 	var currentUser = null;
         $(document).ready(function() {
          
@@ -151,6 +151,7 @@
     	<div class="center">
       		<input type="submit" data-theme="b" name="" id="login" value="Login" data-inline="True">
     	</div>
+		<h3>Demo User<br/>username: test<br/>password: test123</h3>
 	</form>
   </div>
 </div>
@@ -252,6 +253,8 @@ $("#createAlarm").submit(function() {
 		success: function(data) {
 			//have you service return the created object
 			alert('alarm created');
+			$.mobile.changePage("#home");
+			
 		}
 	});
 	return false;
