@@ -158,7 +158,7 @@ $("#createAlarm").submit(function() {
 		"fuid" : fuid
 	}
 	$.ajax({
-		url: 'http://localhost:8080/rest/users/7329836129/alarms',
+		url: 'http://localhost:8080/rest/users/1/alarms',
 		async: false,
 		type: "POST",
 		data: JSON.stringify(send),
